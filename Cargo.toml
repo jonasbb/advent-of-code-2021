@@ -1,0 +1,37 @@
+[package]
+edition = "2021"
+name = "advent-of-code-2021"
+version = "0.1.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[profile.dev]
+opt-level = 1
+
+# This applies to all dependencies, but not this crate or any workspace member
+[profile.dev.package."*"]
+debug = 1     # lines only
+opt-level = 3
+
+# Build scripts and their dependencies will be compiled with -Copt-level=2
+# By default, build scripts use the same rules as the rest of the profile
+[profile.dev.build-override]
+debug = false
+opt-level = 2
+
+[profile.release]
+debug = 1  # lines only
+lto = true
+
+[profile.bench]
+debug = false
+lto = true
+
+[dependencies]
+aoc-runner = "0.3.0"
+aoc-runner-derive = "0.3.0"
+itertools = "0.10.1"
+rayon = "1.5.1"
+recap.git = "https://github.com/softprops/recap"
+serde.features = ["derive"]
+serde.version = "1.0.130"
