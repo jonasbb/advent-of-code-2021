@@ -102,7 +102,6 @@ fn part1(input: &[Command]) -> u32 {
 
 #[aoc_runner_derive::aoc(day2, part2)]
 fn part2(input: &[Command]) -> u32 {
-
     let mut horizontal = 0;
     let mut depth = 0;
     let mut aim = 0;
@@ -114,7 +113,7 @@ fn part2(input: &[Command]) -> u32 {
             Direction::Forward => {
                 horizontal += cmd.distance;
                 depth += aim * cmd.distance;
-            },
+            }
         }
     }
     (horizontal * depth) as _
