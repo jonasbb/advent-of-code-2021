@@ -29,8 +29,9 @@ impl Board {
 
     /// All fields in a row or column need to be marked
     fn is_solved(&self) -> bool {
-        self.fields.iter().any(|row| row.iter().all(|&x| x == -1)) ||
-        (0..self.fields[0].len()).any(|col_idx| self.fields.iter().all(|row| row[col_idx] == -1))
+        self.fields.iter().any(|row| row.iter().all(|&x| x == -1))
+            || (0..self.fields[0].len())
+                .any(|col_idx| self.fields.iter().all(|row| row[col_idx] == -1))
     }
 }
 
