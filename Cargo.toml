@@ -36,3 +36,7 @@ rayon = "1.5.1"
 recap.git = "https://github.com/softprops/recap"
 serde.features = ["derive"]
 serde.version = "1.0.130"
+
+[dev-dependencies]
+criterion.features = ["html_reports"]
+criterion.version = "0.3.5"
