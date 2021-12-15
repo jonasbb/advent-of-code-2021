@@ -1,6 +1,7 @@
 #![allow(dead_code, unused_imports)]
 
 pub type Result<T, E = anyhow::Error> = std::result::Result<T, E>;
+pub use anyhow::anyhow;
 pub use itertools::Itertools as _;
 pub use rayon::prelude::*;
 pub use recap::{Recap, Regex};
