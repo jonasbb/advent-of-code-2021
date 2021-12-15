@@ -1,4 +1,8 @@
-#![allow(clippy::type_complexity)]
+#![allow(
+    clippy::type_complexity,
+    // This lint has false positives on stable
+    clippy::branches_sharing_code,
+)]
 
 mod prelude;
 
@@ -15,5 +19,6 @@ mod prelude;
 mod day11;
 mod day12;
 mod day13;
+mod day14;
 
 aoc_runner_derive::aoc_lib! { year = 2021 }
